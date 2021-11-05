@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+    Taking a video on your computer and putting it on your website
+    Including youtube videos on your website
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Videos</title>
+    </head>
+    <body>
+        <!-- Video tag: The text inside the tag will appear if the user's browser can't diaply the video-->
+        <!-- Have to include the controls attribute if you want the video to be watchable-->
+        <!--Can also control the video size-->
+        <!-- Can also control the video thumbnail, using the poster attribute with an image file-->
+        <!-- You can also sepcify if the video autoplays using the autoplay attribute-->
+        <!--Can include the loop attribute if you want the video to loop once finished-->
+        <!--poster might affect the autoplay element-->
+        <video src="brim1v4clutch.mp4" controls autoplay loop width="750" poster="val.png">Brim 1v4 Clutch</video>
+
+        <!--Including youtube videos: go to the video on youtube, click share then embed, and copy the iframe-->
+        <!--What the iframe does is allow our website to display the youtube website, centered around that video-->
+        <!-- When changing the width the height does not autoadjust-->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QAsy6DA5tgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        
+    </body>
+</html>
