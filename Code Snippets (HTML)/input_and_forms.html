@@ -5,9 +5,48 @@
         <title>Document</title>
     </head>
     <body>
-        
 
+        <!--A form often acts as a wrapper for user input, generally put your input tags inside of here-->
+        <form>
+            <!--Interactive to allow users to enter information-->
+            <!--
+                Just because you define a textbox though doesn't mean it will be functional to use the information
+                Need a backend language to use the information
+                For the most part, all the inputs use the same tag
+            -->
+            <!--Standard textbox-->
+            <input type="text" />
+            <!--Password textbox: replaces the typed letters with dots-->
+            <input type="password"/>
+            <!--Can enter default values for a text box-->
+            <input type="text" value="Enter your username"/>
 
+            <!--A text area is like an input but instead of one line it is a larg box-->
+            <!--
+                Could be useful for a description input
+                Can also define it by rows and columns
+                Can add default text by just typing between the text area tags
+            -->
+            <textarea rows="10" cols="30">
+                Enter a paragraph
+            </textarea>
+            <!--There are different typs of acceptable input-->
+            <input type="date"/>
+            <input type="email"/>
+            <input type="range"/>
+            <input type="file"/>
+            <!--You can check off multiple checkboxes at the same time-->
+            <input type="checkbox"/>
+            <!--Radio buttons function similar to multiple choice when given the same name-->
+            <input name="btn" type="radio"/>
+            <inout name="btn" type="radio"/>
+
+            <!--Can define different buttons-->
+            <input type="submit"/>
+
+            <!--There are other types too-->
+
+        </form>
 
     </body>
 </html>
