@@ -78,5 +78,5 @@ int hexTobin(char* hexdec)
 
 int main()
 {
-    
+    return 0;
 }
