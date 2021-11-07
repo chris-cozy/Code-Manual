@@ -1,0 +1,94 @@
+This refresher will go over Makefiles, from basic to complex
+Imagine you have 2 files: hellomake.c and hellofunc.c, that you are compiling together
+Normally the command you would use would be:
+    gcc -o hellomake hellomake.c hellofunc.c -I.
+    The -I. is included so gcc will look in the current directory for the include file: hellomake.have
+
+This is long to type, and you would have to do it everytime you make a change to either file
+We can solve this with Makefiles
+
+MAKEFILE 1
+hellomake: hellomake.c hellofunc.c
+    gcc -o hellomake hellomake.c hellofunc.c -I.
+
+# Now by running the make command, this command will be run. adding the files that the command depends on lets make know that the command hellomake will need to be run if either of those files are updated.
+# Could still be more efficient
+
+MAKEFILE 2
+CC=gcc
+CFLAGS=-I.
+
+hellomake: hellomake.o hellofunc.o
+    $(CC) -o hellomake hellomake.o hellofunc.o
+
+# The macro CC is the compiler to use
+# The macro CFLAGS is the list of flags to pass to the compilation command
+# By putting the .o files in the dependency list, make knows that it must first compile the .c versions individually, then build the executable hellomake
+# Using this form of makefile is sufficient for most small scale projects. However, there is one thing missing: dependency on the include files. If you were to make a change to hellomake.h, for example, make would not recompile the .c files, even though they needed to be. In order to fix this, we need to tell make that all .c files depend on certain .h files. We can do this by writing a simple rule and adding it to the makefile.
+
+MAKEFILE 3
+CC=gcc
+CFLAGS=-I.
+DEPS = hellomake.h
+
+%.o: %.c $(DEPS)
+    $(CC) -c -o $@ $< $(CFLAGS)
+
+hellomake: hellomake.o hellofunc.o
+    $(CC) -o hellomake hellomake.o hellofunc.o
+
+# This addition creates the macro DEPS, the set of .h files on which the .c files depend.
+# We then define a rule that applies to all files ending in the .o suffix, which says that the .o file depends on the .c version of the file as well as the .h files in the DEPS macro
+# The rule then says that to generate the .o file, make needs to compile the .c file using the compiler in the CC macro
+# The -c flag says to generate the .o file, the -o $@ says to put the output of the compilation in the file named on the left side of the :
+# The $< is the first item in the dependencies list, and the CFLAGS macro is defined as is.
+# As a final simplification, let's use the special macros $@ and $^, which are the left and right sides of the :, respectively, to make the overall compilation rule more general. In the example below, all of the include files should be listed as part of the macro DEPS, and all of the object files should be listed as part of the macro OBJ.
+
+MAKEFILE 4
+CC=gcc
+CFLAGS=-I.
+DEP = hellomake.h
+OBJ = hellomake.o hellofunc.o
+
+%.o: %.c $(DEPS)
+    $(CC) -c -o $@ $< $(CFLAGS)
+
+hellomake: $(OBJ)
+    $(CC) -o $@ $^ $(CFLAGS)
+
+# We can advance this even further. What if we want to put our include files in an include directory? and some local libraries in a lib directory?
+# Also what if we want to hide all of the .o files hanging around?
+# The following makefile defines paths to the include and lib directories, and places the obj files in an obj subdir within the src directory.
+# It also has a macro defined for any libraries you want to include, such as the math library -lm
+# It also includes a rule for cleaning up the source and obj directories.
+# The .PHONY rule keeps make from doing something with a file named cleaning
+
+MAKEFILE 5
+IDIR =../include
+CC=gcc
+CFLAGS=-I$(IDIR)
+
+ODIR=obj
+LDIR =../lib
+
+LIBS=-lm
+
+_DEPS = hellomake.h
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ = hellomake.o hellofunc.o
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+$(ODIR)/%.o: %.c $(DEPS)
+    $(CC) -c -o $@ $< $(CFLAGS)
+
+hellomake: $(OBJ)
+    $(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+.PHONY: clean
+
+clean:
+    rm -f $(ODIR)/*.o *~core $(INCDIR)/*~
+
+# Now we have a perfectly good makefile that can be modified to manage small to medium sized software projects.
+# You can add multiple rules to a makefile, even rules that call other rules
