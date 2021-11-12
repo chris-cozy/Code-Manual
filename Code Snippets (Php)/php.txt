@@ -1,0 +1,21 @@
+Prerequisites to learn php:
+Knowing HTML and CSS
+
+Allows you to make websites more dynamic, and connect with databases
+PHP is a server-side language
+Can be confusing to learn in the beginning
+When you have a .php document, you can write HTML, CSS, JS, etc inside your php document
+This is why many developers stop using HTML documents after learning php
+
+Installing a local server on your computer (necessary to run php):
+XAMPP
+    - TO get the server runnning, find xampp control exe in the xampp directory, and start Apache and MySQL
+    - Then in your browser you can go to localhost/phpmyadmin
+
+Because we are using the Clemson Servers for the project, this is extra^
+You don't need to do anything with phpmyadmin to make php work, you just need the Apache and PHP servers runnning
+
+Within the xampp2 directory, you want to navigate to the htdocs directory, and make a subdirectory as the root for your current project.
+This is where you will store all of your php code
+
+Just like index.html, if you name a file index.php it will be recognized as the starting page
