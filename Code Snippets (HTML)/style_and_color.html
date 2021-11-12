@@ -1,4 +1,34 @@
 <!DOCTYPE html>
+<!-- CSS Style block, there are hundreds of different CSS properties-->
+<!--Adding this p tag changes the style of all of the p tags in the file-->
+<!-- We create a class using the . operator. This will only style elements using the defined class name-->
+<!-- Can change the font size by px (pixel) amount-->
+<!--Can also change the font family, there are predefined families, you can also import google font families-->
+<!--Can have a list of fonts, if the first doesn't work it will try the next, etc-->
+
+
+<!--Adding this line allows the use of the font family Lobster. You can specify a font to use if the specific font doesn't load in-->
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+<!--CSS has an element width that can apply to many HTML tags such as an image/div/paragraph, to size it-->
+
+<style>
+    .larger-image{
+        width: 500px;
+    }
+    p {
+        color: red;
+        font-size: 10px;
+        font-family: monospace;
+    }
+    .blue-text{
+        color: blue;
+        font-family: Lobster, Arial;
+    }
+</style>
+
+
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -6,9 +36,9 @@
         <title>Basic Website</title>
     </head>
     <body style="background-color: rgb(182, 227, 235);">
-        <h2>Style and Colors</h1>
+        <h2 class="blue-text">Style and Colors</h2>
         <hr/> 
-        <!--Can use style attributes to give certain HTML elements styling information-->
+        <!--Can use style attributes to give certain HTML elements styling information, called inline styles-->
         <!--CSS is generally used for styling, this is a very basic CSS example-->
         <!--Can give the HTML tag certain info, can use these atributes in multiple elements, including container tags such as body-->
         <!-- can change the text color by defining the style as color and selecting a color. keep mind of the syntax-->
