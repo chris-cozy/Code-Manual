@@ -39,6 +39,35 @@
                 default:
                     echo "X is undefined";
             }
+            //While loop
+            $x = 1;
+            while ($x <= 5){
+                echo "hi there<br>";
+                $x++;
+            }
+
+            //Do-While Loop
+            //different from a while loop because it will always execute at least once
+            $x = 1;
+            do {
+                echo "hi there<br>";
+                $x++;
+            }
+            while ($x <= 5);
+
+            //For loop
+            for($i = 0; $i < 10; $i++){
+                echo "hello<br>";
+            }
+
+            //For-Each Loop
+            //Deals with arrays
+            //Sets each individual value in the array to the defined variable in the ()
+            $array = array(1,2,3,4,5);
+            foreach ($array as $num){
+                echo "This num is ".$num;
+            }
+            //NEXT VIDEO IS 21
         ?>
     </body>
 </html>
