@@ -46,6 +46,34 @@
             }else{
                 echo $y." is greater than ".$x
             }
+
+            //Increment and Decrement ops
+            $x = 10;
+            //If you put the operator before it will add before the echo. If you put the operator after it will echo before the add
+            echo ++$x;
+            echo $x++;
+            echo --$x;
+            echo $x--;
+
+            //Logical operators
+            $x = 10;
+            $y = 20;
+            //Can use 'or' or ||, the same as in c
+            if($x == $y or 1 == 1){
+                echo "True";
+            }
+            //Can use 'and' or &&, the same as in c
+            if($x == $y and 1 == 1){
+                echo "True";
+            }else{
+                echo "False";
+            }
+            //Can use xor, one of them has to be true but not both
+            if($x == $y xor 1 == 1){
+                echo "Only one is True";
+            }else{
+                echo "False";
+            }
         ?>
     </body>
 </html>
