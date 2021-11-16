@@ -1,0 +1,50 @@
+Inside phpmyadmin you can go to the SQL tab and write SQL code in your database that will create the tables. Example below
+
+            the not null means this cannot be empty.
+            the primary key means that this is unique and no other row can have the same value as it
+            the auto increment means that when there is a new post this value will auto increment by 1 to make it unique
+            datetime does not need a type
+            Good to save your table code somewhere in case a mistake is make and the table has to be recreated at some point
+
+            create table posts (
+                id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+                subject varchar(11) not null,
+                content varchar(1000) not null,
+                date datetime not null
+            );
+
+
+            ---Inserting data into the database tables---
+            Will be the code that will be in php
+            Inside the first parenthesis you put the name of the column, inside values go the values.
+            If you have an auto increment variable you do not need to include it
+            Can also save this in a separate document
+
+            insert into posts (subject, content, date) VALUES ('This is the subject', 'This is the content, etc', '2015-11-14 16:38:01');
+
+            ---Selecting from the database--- this sql code will be the same as in php
+
+            select subject from posts
+            select * from posts //The star signifies all fields/columns. Can be useful for checking if the username and passowrd exists in the same entry (is a proper login)
+            select all from posts where id='1' //Selects everything from posts where id = 1. Will be useful for pulling media info
+            select all from posts where id='1' AND subject='This is the subject' //Can also use 'AND' and 'OR'
+
+            ---Updating data from the database---
+            Same code that will be in php
+            Will be useful for updating profile, media titles, etc
+
+            update posts //Can use either a space or press enter after this
+            set subject='This is a test', content='This is the content'
+            where id='1'
+            
+            ---Deleting data from tables---
+            Same code that will be in php
+
+            delete from posts //Can use either space or enter
+            where id='1' //If you don't include the where it where delete all data in the table
+
+            ---Ordering data in database---
+            Where by number large to small, or by date, etc
+
+            SELECT * FROM posts ORDER BY id ASC //ASC is for ascending 1->10, DESC is for descending 10->
+            SELECT * FROM posts ORDER BY subject ASC //Because these aren't ints it will order alphabetically
