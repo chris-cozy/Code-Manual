@@ -6,6 +6,10 @@
     </head>
     <body>
        <?php
+            //Connecting the database to php
+            /* 
+                Next video 36
+            */
            
         ?>
 
