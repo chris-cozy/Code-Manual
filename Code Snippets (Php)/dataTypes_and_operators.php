@@ -23,8 +23,9 @@
 
             //Array
             $names = array("Kirsten","Canlas","Azarraga");
-            //Inside the single quotes is where you put the desired array index
-            echo $names['0'];
+            //Inside you can also choose to put the index inside single quotes
+            echo $names[0];
+
         ?>
         <!-- Operators: similar to C-->
         <?php
