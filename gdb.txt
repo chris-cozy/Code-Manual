@@ -1,0 +1,24 @@
+GDB stands for GNU Project Debugger
+It is a powerful debugging tool for C and other languages
+Allows you to iterate through your programs and see exactly what is happening
+It operates on executable files, produced by the compiler
+To use GDB effectively, activate debugging tools by compiling your program with the -g flag.
+This flag will allow you to see the proper names of variables and functions in your stack frames,
+as well as get line numbers and see the source as you step through the program.
+
+To use gdb, in the cmd prompt, type: gdb <program to be run>
+
+Common commands:
+q or quit                   - exit out of gdb
+r or run                    - executes program from start to end (or until breakpoint)
+b <line> or break <line>    - sets a breakpoint on a particular line
+disable <line>              - disables a breakpoint
+enable <line>               - enables a disabled breakpoint
+n or next                   - executes next line of code, but don't dive into functions
+step                        - go to next instruction, diving into the function
+l or list                   - displays the code
+p <var> or print <var>      - displays the stored value of the variables
+clear                       - clears all breakpoints
+continue                    - continues normal execution
+info b                      - displays the breakpoints
+set <var>=<value>           - changes the value of that variable temporarily to continue execution with changed value
