@@ -1,0 +1,3 @@
+This concept of piping uses temporary files to send
+and recieve data between two programs.
+The temp files are predefined and are closed by each program after use.
