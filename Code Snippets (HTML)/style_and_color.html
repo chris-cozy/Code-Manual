@@ -1,29 +1,90 @@
 <!DOCTYPE html>
-<!-- CSS Style block, there are hundreds of different CSS properties-->
-<!--Adding this p tag changes the style of all of the p tags in the file-->
-<!-- We create a class using the . operator. This will only style elements using the defined class name-->
-<!-- Can change the font size by px (pixel) amount-->
-<!--Can also change the font family, there are predefined families, you can also import google font families-->
-<!--Can have a list of fonts, if the first doesn't work it will try the next, etc-->
-
+ <!--CSS is generally used for styling, this is a very basic CSS example-->
+<!--Can give the HTML tag certain info, can use these atributes in multiple elements, including container tags such as body-->
 
 <!--Adding this line allows the use of the font family Lobster. You can specify a font to use if the specific font doesn't load in-->
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
-<!--CSS has an element width that can apply to many HTML tags such as an image/div/paragraph, to size it-->
-
+<!-- CSS Style block, there are hundreds of different CSS properties-->
 <style>
+    /*We create a class using the . operator. This will only style elements using the defined class name*/
     .larger-image{
+        /*CSS has an element width that can apply to many HTML tags such as an image/div/paragraph, to size it */
         width: 500px;
     }
+    /* Adding this p tag changes the style of all of the p tags in the file */
     p {
         color: red;
+        /*Can change the font size by px (pixel) amount*/
         font-size: 10px;
+        /* Can also change the font family, there are predefined families, you can also import google font families */
         font-family: monospace;
     }
     .blue-text{
         color: blue;
+        /* Can have a list of fonts, if the first doesn't work it will try the next, etc */
         font-family: Lobster, Arial;
+    }
+
+    /*
+    3 properties that control the space around each element:
+    margin - space outside of the border that surrounds the padding. Controls the amount of space between an element's border and surrounding elements
+    padding - controls the space around the text
+    border
+     */
+    .border{
+        /*Can add borders to different elements */
+        border-color: red;
+        border-width: 5px;
+        border-style: solid;
+        /*
+        border radius allows the border to appear more rounded
+        In addition to px you can use a percentage to initialize this
+        Using 50% will create a circular image/border. Like a pfp
+        */
+        border-radius: 10px;
+    }
+    .padding{
+        padding: 10px;
+    }
+    /*You can also adjust the individual padding for each side */
+    .custom-padding{
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+    /*Clockwise notation to specify padding*/
+    .clockwise-padding{
+        /*23:03 */
+    }
+    .margin{
+        margin: 20px;
+    }
+    .neg-margin{
+        margin: -15px;
+    }
+    /*You can also adjust the individual margin for each side */
+    .custom-margin{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .green-bc{
+        /*Can set an elements background color*/
+        background-color: blue;
+    }
+    /*
+    You can also style based on id
+    Each html element can only have one id, but can have multiple classes
+    Can use the id to add CSS styles, or reference it in javascript
+    When styling IDs, use a hashtag instead of a period.
+    CSS prioritizes ids over classes
+    */
+    #heading{
+        color: green;
     }
 </style>
 
@@ -35,15 +96,13 @@
         <meta name="description" content="This is a website displaying basic tag use">
         <title>Basic Website</title>
     </head>
+    <!--Can use style attributes to give certain HTML elements styling information, called inline styles-->
+    <!--Can also change the background color, can define a more unique color using rgb data-->
     <body style="background-color: rgb(182, 227, 235);">
-        <h2 class="blue-text">Style and Colors</h2>
-        <hr/> 
-        <!--Can use style attributes to give certain HTML elements styling information, called inline styles-->
-        <!--CSS is generally used for styling, this is a very basic CSS example-->
-        <!--Can give the HTML tag certain info, can use these atributes in multiple elements, including container tags such as body-->
-        <!-- can change the text color by defining the style as color and selecting a color. keep mind of the syntax-->
-        <!--Can also change the background color-->
-        <!-- Can define a more unique color using rgb data-->
+        <!-- You can add multiple classes by adding a space in between them-->
+        <h2 class="blue-text red-border">Style and Colors</h2>
+        <hr/>
+        <!--Can change the text color by defining the style as color and selecting a color. keep mind of the syntax-->
         <p style="color: magenta;background-color: rgb(147, 223, 236);">Hey world, I am Kamori</p>
     </body>
 </html>
