@@ -1,1 +1,9 @@
 SCHEDULING
+
+Different scheduling techniques:
+FCFS (first come first serve) | FIFO (first in first out)
+RR (round robin)
+SJF (shorter job first)
+Multi-level Queueing
+EDM (earliest deadline first)
+Least Slack
