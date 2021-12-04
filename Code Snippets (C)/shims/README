@@ -1,0 +1,6 @@
+The shim will be compiled into a shared library (.so)
+
+Must include this to load custom library instead of the original
+LD_PRELOAD=./<compiled shim name> ./<executable>
+
+You can use shims to do things such as modify Mozilla Firefox and the connections it makes
