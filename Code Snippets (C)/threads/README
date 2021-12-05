@@ -1,0 +1,81 @@
+Threads v processes
+Processes:
++ Isolation (not much access to the rest of the connections)
+	- If a process crashes, only that connection goes down, the others are fine
+- Uses more memory
+- Slower
+- More memory
+
+Threads:
++- Easy sharing
++ Lighter weight
++ Faster
++ Less memory
+
+Blocking I/O
+	- Downside is that if a function is called like 'fread', it will not continue until fread is complete and has returned its value.
+Asynchronous I/O
+	- It will start fread, then do something else, and be called back when the function is done. Another way to get concurrency or even parallelism in the program without using another thread. Can start a number of different things and be called back when they finish.
+The downside is that there is much more complexity. Have to set up a pointer, a start and finish action, etc. Can be useful in times but a lot of people avoid it because of the complexity.
+
+
+Parallelism vs Concurrency
+	- Parallelism is simultaneous, Concurrency goes back and forth between the two processes
+    - We'll mostly use kernel threads to get parallelism
+Kernel vs User threads
+	- With user threads, the kernel doesn't know the difference between the processes
+
+Locks
+    -Used so only one thread can access a shared resource at a time, the threads without the lock will not have access to that resource
+        - The thread that called the lock has to be the one to unlock it
+    -Area after the lock is called the critical section
+    -Resource example: a linked list
+    -Look up when to use locks
+Only one thread can hold a lock at once. If another thread tries to grab the lock it can't, 
+it will switch back to the original thread to finish the process. 
+Once unlock is called, then the thread that called the lock next will operate.
+This gives some overhead
+
+Recursive locking
+	- If you call a function in the critical section and it calls the same lock, it won't work and the thread will cease to run
+With recursive locking, it will be recognized that the function calling the lock is in the same thread and allow it to use the lock
+
+There are different lock types.
+
+Spin Lock
+    void lock (bool* theLock)
+    {
+        while(*theLock){}
+        *theLock = true
+    }
+    - There are synchronization issues with this implementation, 
+        - If two threads called lock around the same time there could be an issue where they both get the lock because of the time it takes to go through. The first thread could be in the process of the lock function when it gets interrupted before it locks the lock and the second thread calls it as well.
+    - The solution is to make the lock function atomic (Atomic - cannot be interrputed). You could set a timer and tell it not to context switch until the timer is up. What more expensive processors do is run these functions as an instruction set in the hardware, preventing interruptions.
+Spin Locks are not very efficient, relatively uses a lot of energy and cpu.
+Suspend/Resume method.
+
+THREAD PROTECTION
+
+I want my machine to finish long-running computations more quickly, should I make my CPU quantum longer or shorter and why?
+	- Longer. Less switching means more time working on my computation. 
+Are kernel threads or user threads more likely to speed up a CPU-bound workload?
+	- kernel
+    - User will not affect
+
+Protecting threads against sharing: use a lock
+	- Have to put the lock and unlock in the right place for it to be thread-safe
+	- Critical to remember: Have to be consistent with the locks in the code or it will not function properly
+
+You have 5 threads that can all access a linked list. One thread makes changes to the list while the others only find items in it.
+Is it efficient to have each thread access the lock when going through the list for their tasks? 
+    - The ones reading from the list don't need to lock, you can have multiple lookups and be okay, it doesn't change the list. The thread altering the list should have the lock.
+	- Special lock type: Reader-Writer lock.
+		○ When you grab the lock, you can either grab it as a reader or writer
+			§ Readers can all access the linked list simultaneously
+			§ When the writer accesses it, everyone else has to wait
+	- A way to get better concurrency without all the writing overhead. Still doing some locking, but not always locking everyone out.
+    
+Condition variables always have an associated mutex
+
+Bank problem, create a counter that counts down the number of seconds an action is not taken.
+Finished code: interactivebank.c
