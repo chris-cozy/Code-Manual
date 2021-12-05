@@ -1,0 +1,2 @@
+When attached to a name, memory can be shared among any process, not just parent and child.
+The second example uses shmid, shmat, etc

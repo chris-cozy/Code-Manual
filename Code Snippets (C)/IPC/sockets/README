@@ -1,0 +1,14 @@
+Socket (stream and datagram)
+	- Functions like a file
+		○ Can read and write to it
+	- The two communicating processes could be on different machines
+		○ Client and server
+		○ Goes into networking
+Two directional
+
+Pros:
+Saves disk space
+Faster than files
+
+Cons:
+Complicated to set up

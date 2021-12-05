@@ -1,0 +1,9 @@
+Most Interprocess communication resembles files when 'reading' and 'writing', but they are different.
+
+Other methods:
+mmap
+	- Requesting a memory mapping from the kernel
+Shared memory
+	- When attached to a name, can be shared among any processes, not just child and parent
+Message passing
+	- 

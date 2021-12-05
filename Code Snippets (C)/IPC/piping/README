@@ -1,3 +1,16 @@
 This concept of named piping uses temporary files to send
 and recieve data between two programs.
 The temp files are predefined and are closed by each program after use.
+
+General piping info
+	- Restricted to the same machine
+	- Generally one directional communication
+	- Easiest way to create:    ls -al | grep context
+	- There are also named pipes
+	- Functions like a baton pass, the sender will not finish until the receiver takes the data
+
+PROS:
+Faster than files
+Built into the OS
+Don't need to go to disk or the network stack, so should be faster than sockets
+You can name pipes for easier accessibility
