@@ -1,0 +1,33 @@
+We are using Junit 4, so download that version on personal machine
+	- The graders use Junit 4
+
+Running Junit on School Unix
+Put the Junit test file in the same package/directory as the java code
+You can still compile the code without Junit and run it normally, just don't include the Junit code file
+Example Lab code
+	- Javac cpsc2150/banking/MortgageApp.java cpsc2150/banking/Customer.java cpsc2150/banking/Mortgage.java …
+	- Can now run it with java MortgageApp as usual
+If wanting to run Junit code, need to include Junit code file, and Junit jar file
+	- Add Junit jar file to classpath
+		○ Jar file is a Java Archive file
+		○ Like a zip file, but filled with compiled java code and meta data
+	- Classpath is one of the arguments to the compiler
+	- Java will search for libraries we import by looking in the folders specified in the classpath
+		○ We haven't needed to do this so far because we've only imported standard java libraries that are included with the compiler.
+		
+To specify the classpath: -cp  .:<path>
+For SoC the Junit path is                  .: /usr/share/java/junit4.jar
+	- If installing on personal computer it is different
+	- Javac -cp .:/usr/share/java/junit4.jar cpsc2150/banking/MortgageApp.java cpsc2150/banking/Customer.java cpsc2150/banking/Mortgage.java …
+	
+Now the Junit tests can be run
+	- Need to use the classpath again and include Junit executable
+	- Java -cp .:/usr/share/java/junit4.jar org.junit.runner.JUnitCore cpsc2150.banking.TestMortgage
+	- Now instead of calling MortgageApp as the entry point, we are calling JUnitCore as our driver, and passing in our compiled TestMortgage as an argument
+
+Junit testing and makefiles
+Add two new targets
+	- Test
+		○ Use command to compile our Junit code
+	- Runtest
+		○ Use command to run out Junit command

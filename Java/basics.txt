@@ -1,0 +1,49 @@
+Java can run on any machine, making it a strong, versatile language
+When running a Java program you are running the JVM (Java Virtual Machine)
+
+Creating a Java Program on Unix
+	- Create a file just like with C++ on unix, but use the .java file extension
+		○ Ex: HelloWorld.java
+	- To compile, use javac command
+		○ javac HelloWorld.java
+		○ There are many flags and options for the compilers
+	- To run the program, use the java command
+		○ java HelloWorld
+There is no file extension
+
+Packages
+    Import statements:
+        Import java.util.*
+        Import java.io
+    
+Everything in Java is a part of a class
+    This is an important difference from its sister language C++
+        No semi-colon at the end of classes either
+    The program itself will be a class, with a public static method called making
+        It is common to name this class after the program itself, or to concatenate "App" at the end of the name,
+        to signify that this class contains the main function
+
+Main function   
+    public static void main(string[] args){
+        //Enter code here
+    }
+    Can use args.length to get the number of arguments
+
+Output
+    Use System.out object, and either the print() or println() method
+        System.out.println("Hello World");
+    You can use the + operator to concatenate strings
+        String is a defined class so it overloads the operator
+        As long as one operand is a string, then it will convert the other to a string as well (if applicable)
+
+Input
+    Packages needed:
+        java.io* (Newer java versions don't need this)
+        java.util.*
+    Create a scanner object and pass System.in to the constructor
+        Scanner scan = new Scanner(System.in);
+    Now you can use the nextline() scanner method to read in a line of input
+        Returns a string
+    Can cause errors to have many Scanner objects reading from the same input stream.
+        Programmers often have one class that interacts with the keyboard
+        For smaller/simpler programs it is generally beneficial to keep it all in the class that contains the 'main' function

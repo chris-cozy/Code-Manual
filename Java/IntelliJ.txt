@@ -1,0 +1,24 @@
+Pay attention to the project location when creating a new project
+
+Creating a new package
+    New package, lowercase letter first
+        - Example cpsc2150.helloworld
+        - The cpsc2150 is the new directory
+    Inside the package create a new class
+
+Building(compiling) and running the class
+    Edit configurations -> Application
+        - Select main class
+        - No program arguments
+    Then I can run the program
+    Can add other class files if needed
+
+Creating From Template
+    Base package - choose existing package to base off of
+    Bad practice to have a class called main
+    When moving to Unix, use the .java files not the .class files, since it's compiles for the machine
+
+Debugging
+    Once there's an error, go through all of the code that I wrote and place breakpoints, then instead of clicking run click the bug to debug
+    Find the line where the error is and debug
+    Step into- goes into the next line of code

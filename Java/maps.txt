@@ -1,0 +1,71 @@
+MAPS
+    A special type of collection
+    Store items in key:value pairs, like a dictionary
+    The key is a unique identifier
+
+    They are generic, and take in 2 data types as arguments
+        - First for key
+        - Second for the value
+        The data types can be anything that extends Object, can even use a collection type such as List
+            - Can use wrappers for data types that are not primitive
+    Keys replace index, cannot have duplicate Keys
+
+    Map is an interface with many implementations
+        A common one: HashMap
+
+SYNTAX
+    Map<Object key, Object value> name = new HashMap<Object key, Object value>();
+    Map<Object key, Object value> name = new HashMap<>();
+
+
+EXAMPLE
+    Map<Student, Double> grades
+        Key is Student object, Value is the Double that holds their grade
+
+MAP INTERFACE/METHODS
+    Public V put(K key, V value)
+        - Adds key value pair to our map
+        - Returns key value, which can be ignored
+        - Key must not already exist, but current keys can be accessed and their values changed
+    Public V get(K key)
+        - Returns value associated with that key
+        - It has to be a reference object, it returns a pointer which allows value
+    Public V remove(K key)
+        - Removes the key value pair associated with key to be changed if mutable
+            ○ Have to be careful with aliasing
+        - Returns value
+    Public int size()
+        - Returns the number of key value pairs in the map
+    Public boolean isEmpty()
+        - Returns true if map has no pairs in it
+    Public boolean containsKey(K key)
+        - Returns true if map contains the key key
+        - Calls K.equals()
+        - Important that equals is overridden for this to work
+    Public boolean containsValue(V value)
+        - Returns true if the map contains the value value
+        - Calls V.equals()
+    
+SUB INTERFACE
+    Map.Entry
+        - Sub interface type
+        - Entry is data type used to hold a key value pair in one object
+        - Has two methods
+            ○ Public Object getKey()
+                § Returns the key as an object
+            ○ Public Object getValue()
+                § Returns the value as an Object
+        - Since it returns an object, and not k and v, we need to cast to our data type
+        - Helpful for looping through a map
+        - Map.entrySet() returns the set of all Map.Entry objects in the Map
+
+    To change value of a mutable type use get(), if immutable use remove() then put()
+
+LOOPING THROUGH A MAP
+    We can use our for(val:array) syntax to loop through a map
+    Map<Integer, String> myMap = new HashMap<>();
+    …
+    For(Map.Entry<Integer, String>  m: myMap.entrySet()){
+        //m holds our current key value pair
+        System.out.println(m.getKey() + "," + m.getValue());
+    }
