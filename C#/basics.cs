@@ -9,10 +9,14 @@ using System;
 
 namespace practice
 {
+    //Declaring things in the namespace allows any class using the same namespace to have access to it
     class basics
     {
         static void Main(string[] args)
         {
+            //Unlike in C, a string is a data type
+            string test = "Hello";
+            
              /*
             Methods are functions. 
             For example, Constant.Writeline 

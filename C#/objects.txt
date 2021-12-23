@@ -1,0 +1,6 @@
+Programmatically generating objects, rather than hardocding.
+    Can create a new class that handles the generation of the new objects.
+    A controller class
+
+    In order to dynamically create ne objects during the runtime, they must be stored somewhere
+        One of the best ways is to use a list

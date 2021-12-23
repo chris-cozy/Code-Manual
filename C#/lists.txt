@@ -1,0 +1,12 @@
+LISTS
+Syntax
+    List<*class*> *list name* = new List<*class*>();
+
+A list is similar to an array, but they don't have a set size.
+They are dynamic, which makes them very versatile.
+Extremely useful for certain cases.
+
+Managing a list using indices is similar to an array
+Lists come with predefined methods such as:
+    Add - adds an object to a list
+    Count - returns the number of objects in the list

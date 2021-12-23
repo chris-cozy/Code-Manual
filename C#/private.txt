@@ -1,0 +1,23 @@
+PRIVATES, GETTERS/SETTERS, 
+
+When using private fields, you can't access them from other classes like with public fields
+Must use getters and setters to access and change the variables.
+This makes them more secure/protected.
+By making the getters/setters public, we can call them from outside the class
+     
+PROPERTIES
+An easy way to implement the process of getting and setting private field values
+They use what are called accessors, which have the same logic as the getter and setter methods.
+Can use a capital for the property and a lowercase for the field to distinguish between the two.
+I.E: 
+     private int age
+     public int Age{
+         get {return age;}
+         set {age = value;}
+     }
+Once created, to use in another class:
+     myCat.Age
+     By default it will call the get accessor
+
+     myCat.Age = 7
+     This will call the set accessor, and set the age
