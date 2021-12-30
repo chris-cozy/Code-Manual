@@ -1,0 +1,80 @@
+CLASSES IN JAVA
+    Fundamental component is an object
+            - A running program is a collection of objects
+        An object encapsulates
+            - Data
+            - How the data changes
+        Each object is an instance of a class
+        Class declaration is blueprint for objects
+        Class is a component type
+            - Stack, String, Person
+        Object is an instance of that component
+            - Pencil mathTool = new Pencil();
+
+        Good things to do
+            - Only declare one class per file
+            - Give file name the same name as the class declaration it contains
+                ○ Class HelloWorldApp declaration appears in HelloWorldApp.java
+        Two members in class declaration
+            - Fields (data)
+                ○ int length; 
+            - Methods (procedures)
+
+    Object creation and deletion
+        Explicit object creation with new();
+            - Java.util.Date d = new java.util.Date();
+            - Integer count = new Integer(34);
+        Unlike in C/C++, memory is not explicitly freed
+            - References just go out of scope (become null)
+        Automatic garbage collection eventually deletes unreachable objects
+            - There is a call for garbage collection but it doesn't always guarantee that garbage collection happens (it's not very helpful)
+
+        Java has a high memory overhead, so it's not used in many places where running out of memory is a concern
+
+    Initialization of an object's fields
+        Implicit: default values based on type
+        Explicit: initialization with field declaration
+        Special method: "constructor"
+            - Syntax: name is same as class, no return type
+            - Invoked by new(), so can have parameters
+            - Runs after implicit/explicit field initialization
+
+        Default initial values are for fields only, and do not apply to local variables
+
+    Visibility
+        Members can be private or public
+        Private members
+            - Can only be accessed by instances of the same class
+            - Provide concrete implementation/representation
+        Public members
+            - Can be accessed by any object
+            - Provide abstract view (client-side)
+
+    Good things to do
+        Group member declaration by visibility status
+            - Java convention: private at the top
+        No data fields should be public
+            - Bad practice: Public "accessor" methods for getting and setting private fields (aka getters/setters)
+            - Better practice: Provide public members for observing and controlling abstract values of objects
+
+    Method Invocation
+        Syntax: objectreference.member
+        Reference is implicit inside same object
+        Explicit reference to same object available as this keyword (from within the object itself)
+
+    Method Overloading
+        A class can have more than one method with the same name as long as they have different parameter lists
+            - How does the compiler know which method is being invoked?
+                ○ Based off the parameters being passed in
+            - Differing only in return type is not allowed
+
+    Multiple Constructors
+        Default constructor: no arguments
+            - Fields initialized explicitly or implicitly
+            - Provided automatically only if no constructor defined explicitly
+        Another constructor: one same-class argument
+            - Often called a copy constructor
+            - Ex: Pencil (Pencil p) {…}
+        One constructor can call another with this()
+            - If another constructor called, must be the first statement
+        Not seen very often
