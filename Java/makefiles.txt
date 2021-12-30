@@ -1,0 +1,40 @@
+Makefiles are the same as in C
+
+Makefile Syntax
+<Target>: <Dependencies>
+<tab> <command>
+
+Dependencies - what files are needed? Can be other targets with their own compilation statements
+Command - my compile statement
+Target - can be named what I want, but there are some standard ones such as 'default'
+Makefile example:
+default: cpsc2150/lab1/HellowWorld.java
+	javac cpsc2150/lab1/HelloWorld.java
+	
+	
+Makefile Run Syntax
+Same syntax as before, but what's plugged in changes
+<Target> - name it run
+<Dependencies> - the name of my compiled file
+<command> - my run command
+Example:
+run: cpsc2150/lab1/HelloWorld.class
+	java cpsc2150.lab1.HelloWorld
+	
+Makefile Clean Syntax
+Helpful to get rid of the .class files, so you don't accidentally submit them
+Target - 'clean'
+No dependencies
+Command is unix command to delete files with .class extension
+Example:
+clean:
+	rm -f*.class
+	
+Using your makefile
+Typing 'make' will run the top target (which is why it should be default)
+Typing 'make <target>' will run another target
+	- Make run - runs the 'run' target that runs your program
+	- Make clean - runs the 'clean' target that will delete your extra files
+
+There are a lot more advanced tricks to makefile that may be covered later
+Information can be found online

@@ -47,3 +47,18 @@ Input
     Can cause errors to have many Scanner objects reading from the same input stream.
         Programmers often have one class that interacts with the keyboard
         For smaller/simpler programs it is generally beneficial to keep it all in the class that contains the 'main' function
+
+0 and 1 do not evaluate to boolean values like in some other languages
+
+Functions in Java and C++ are almost exactly the same
+    Two important differences
+        - In java, every function belongs to a class
+            ○ Which means every function must have a visibility defined for it (public, private, etc.)
+            ○ Declaring a static function is much more common
+        - We have to carefully consider how we pass parameters to a function in Java
+
+Passing Parameters to functions
+    In Java, I don't have control over the pointers, referencing and dereferencing
+    Everything is passed by value, however reference type variables have a value of a memory location
+    This means all primitive types are passed by value and everything else is passed by reference
+    Can cause aliasing issues, since any change to a reference type variable made inside the function will be made outside the function as well

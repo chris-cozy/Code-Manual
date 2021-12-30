@@ -1,0 +1,75 @@
+PRIMITIVE VARIABLES
+        - Boolean, byte, short, int, long, float, double, char
+            ○ Each with their own range and byte size
+        - Declaration and casting similar to that in C
+        - Constant values same as in C++
+    String is not a primitive data type
+        - Denoted with "double quotes"
+    When writing a long constant, use an uppercase 'L'
+        - Long x = 13L
+        - Lowercase 'l' is still correct, but can be confusing because can be mixed up with 1
+    For a float, 'F' or 'f' can be used, but be consistent
+
+PRIMITIVE DATA TYPES
+        - A type is a set of possible values, some types are bigger than others and may have subsets
+        - For example every int is a long, so long is a bigger type
+        - Double <- float <- long <- int <- short <- byte
+    When going from a smaller to larger type (widening) no casting is needed
+        - Widening can be forced by an explicit cast, which is useful
+    Narrowing can cause precision to be lost, same with widening
+
+REFERENCE DATA TYPES (called pointers in C/C++)
+    In Java anything not one of the 8 primitive data types is a reference data type
+        - Ex: classes and arrays
+        - I don't have to specify that it is a pointer like in C/C++, Java is automatically aware
+        - Java does not have a dereferencing operator, it's handled automatically
+    Referencing and dereferencing is handled automatically, but I still need to be aware of when I am using reference data types, because of aliasing errors that can occur
+    The value stored in a reference type is a memory location
+
+    ALIASING - can occur when using reference types
+        - When using the assignment operator (=) with reference types, we are copying the memory location, not the actual value, so both reference variable will be pointing to the same memory location
+        - (==) will compare to see if memory locations are the same
+    Use .equals() instead
+        - Example: object1.equals(object2) will return true if both objects are equal
+
+WRAPPERS
+    Each primitive data type has a corresponding wrapper class
+        - Denoted with an uppercase letter
+        - Example: Integer, Long, Double
+    The wrapper classes are reference data types and immutable
+    Immutable object - abstract value can never change
+        - Constructor allows initialization to different values
+        - Aliasing immutables is safe
+        - Use: Sometimes reference types need to be passed as parameters
+            ○ Ex: add variable x to a list. Later the value of x changes. Immutability allows x to change while the value in the List does not change
+
+    Boxing - taking a primitive type and storing it in its associated wrapper type
+    Unboxing - extracting the base primitive type from its wrapper type
+        - Call a getter function to retrieve the primitive value
+    Java does these automatically when using the correct syntax
+
+    String variables (reference type)
+    Boxing and unboxing still happens, but be careful with equality
+
+    Final variables
+    Called constants in C++
+    Can be initialized once, but can't be changed
+        - Initialization doesn't need to be on the same line as the declaration
+    For a reference variable, the value can still be changed but the memory location cannot be
+
+ARRAYS
+    In java, arrays are references, so the brackets come before the variable name
+        - Ex: int [] A = {1, 2, 3}
+    Elements in an array given a default value based on data type
+    Accessing an index is the same as in C++
+    Java arrays have length attribute that can be called at any time
+    Arrays can be multidimensional
+    Two-dimensional arrays do not need to be rectangular, and each row can be a different size
+
+CONVERSIONS
+    Integer to String
+        - You can use Integer.toString(int) method to convert an integer into string format. It returns a String object representing the specified int parameter.
+        - You can also use String.valueOf(int)
+        - You can use the Integer wrapper class to invoke its toString method.
+            ○ Integer obj = new Integer(d);
+            ○ String str = obj.toString();
