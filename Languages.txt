@@ -1,0 +1,8 @@
+Focus languages:
+    - Python
+    - java
+    - C
+    - C#
+Honorable mentions:
+    - HTML
+    - PHP
