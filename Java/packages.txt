@@ -1,0 +1,49 @@
+A package is a grouping of classes, like a catalog or library
+Hierarchy: sub packages within packages
+Some standard libraries organized into packages
+
+A package provides
+	- Logical structuring: related classes are bundled
+	- Encapsulation: another level of access control
+	- Distinct namespace: classes in different packages can have the same name without conflict
+
+Declaration
+    Use package statement at top of source file
+        - Must appear first, before any class declarations
+        -  Example: package edu.clemson.cs.cpsc2150;
+            ○ class Pencil {….}
+    This file must be in a directory matching package name
+    At most one package declaration in a file
+    If there is no declaration, class is in unnamed default package
+        - This is fine for very small programs
+
+Access Control
+    Another level of visibility: package
+        - Default for members if visibility not specified
+        - Package visible members are accessible by all classes in the same package
+    Classes are either public or package (default)
+        - Public classes available outside the package
+        - Package classes available only within the same package
+	
+Type Imports
+    Fully qualified type name is package.<class>
+        - Don’t confuse the "." with member access
+    Shorthand: import statement at top of file (for public types not package types)
+        - import java.util.Date;
+        - To import all public types, use wildcard *
+            ○ import java.util.*;
+            ○ .* does not import sub packages
+    All classes implicitly import java.lang.*
+    Static members can be explicitly imported and can use wildcard as well
+        - import static java.lang.Math.exp;
+        - exp(x); //instead of Math.exp(x)
+
+Good Practice: Naming Conventions
+    Avoid name conflicts with packages and reserved keywords
+    Package names: lowercase letters, can use uppercase first letter for second word
+    Class names: start with uppercase letter
+    Variable, field and method names: start with lowercase letters
+    Constant names: all uppercase letters
+
+By using these conventions we can tell a lot of information
+Folder structure is important
