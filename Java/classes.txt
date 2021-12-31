@@ -78,3 +78,61 @@ CLASSES IN JAVA
         One constructor can call another with this()
             - If another constructor called, must be the first statement
         Not seen very often
+
+THE OBJECT CLASS
+    Every class in Java inherits from the special built in Object class
+        - Provides default implementations for instance methods
+            ○ Boolean  equals (Object obj)
+            ○ String toString()
+            ○ Etc.
+        - Every class by default has these methods since they inherit
+    The class Object has no data fields though, the methods don't do anything except ensure that every class has the same name for these important methods
+        - Instead of:
+        - A.equals()
+        - B.isEqual()
+        - C.checkEqual()
+
+    equals
+        boolean equals(Object obj)
+            - Reports whether "this" equal to obj
+            - Ensures
+                ○ equals = (this == obj)
+            - So the default implementation checks reference (memory) equality, which may not be what I want it to do
+            - Need to override
+
+    toString
+        String toString()
+            - Returns the string representation of "this"
+            - Ensures:
+                ○ toString = [the string representation of this]
+            - So the default implementation returns a string of the reference value (memory location) of "this", which may not be what I want it to do
+            - Need to override
+
+    To override, before the body of the method, type @Override
+        - Example:
+    @Override
+    public String toString() {
+    …
+    }
+
+    Always override the equals and toString operators, even if not being used
+    There is an issue when overriding the equals method
+
+    instanceOf
+        A special operator in Java
+        Syntax: <object> instanceOf <Class>
+        Returns true if the object is of type class
+            - False otherwise
+        Used when overriding the equals method
+            - Can be used in an if statement
+            - If (!(obj instanceOf Pencil))
+                ○ return False
+
+    Casting
+        Now it is know that obj is the right type, but there will be a syntax error if methods are called
+        obj needs to be casted, the same way primitive types are
+        Casting is us promising that it will work, so instanceOf needs to be used to confirm the type first
+
+    Overriding VS Overloading
+        These are different
+        Overloading - when two or more methods have the same name and differ in the number and/or types of their formal parameters
