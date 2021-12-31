@@ -1,0 +1,78 @@
+STATICS
+Object vs Class Members
+	- Class member: only one copy, which is shared by all instances
+		○ Keyword: static
+		○ Example: static int count;
+
+Aka Instance vs Static Members
+	- Static members are available even before instances(objects) are created
+	- Conversely, static members can not access instance members
+
+Good Practice: Static Members
+    Do not access static members through object references
+    Use class names instead
+        - Do this: int t = Pencil.count;
+        - Not this: int t = p1.count;
+    This applies within a class too
+
+Constant Fields: final
+    Modifier final on a field means it cannot change
+        - For a primitive type, effectively a constant
+        - For objects, only the reference is constant, which means reassignment will cause an error
+    Often used in conjunction with static
+        - Class- wide constant value
+        - Example: static final int DEFAULT_LENGTH = 10;
+
+Good Practice: No Magic Numbers
+    "Magic Number": a numeric constant in code
+    Some literals are acceptable
+        - Booleans and references (true, false, null)
+        - Integers: -1, 0, 1, 2
+    The rest should all be avoided
+    Important Benefits:
+        - Single point control over change
+        - Legibility
+
+static, final, public variables
+    I can add data members to a class that are
+        - Static - only one copy that belongs to the class and can be accessed via the class name
+        - Final - the values cannot change (reference type distinction)
+        - Public - available outside of the class
+    This is only done with primitive or immutable data types
+        - Reference types aren't really final
+    Helpful for providing values that the client of a class may need to know or check against
+        - Maximum and minimum allowable values for input validation
+
+public data members!
+    This is the exception to the private data member rules
+    Since they're final, we don't have to worry about a client changing the value
+    Why static?
+        - Only want to expose data that is same for every instance of class
+        - If it could be different for each instance, then it wouldn't be constant
+    We really only do this to replace magic numbers and to make the information easy to find
+
+Static Methods
+    My methods can be declared as static
+    This means the method can be called using the class name, and not declaring an object
+    Helpful for utility operations
+        - Common operations not tied to any data
+    static methods only have access to static data members, not instance members
+    Can only call methods of the same class if they are also static
+
+Initialization Block
+    Statement block outside methods/constructors
+    Executed before the body of any constructor
+
+Static initialization blocks
+    Similar to initialization block, but:
+        - Can only reference static members
+        - Executed only once, when class is first loaded
+    Format:
+    static{
+        //code goes here
+    }
+    Everything in a static block is run first. This includes initialization statements, loops, etc.
+    Static initialization blocks generally are placed within the class and before the main function.
+    The code inside static block is executed only once: the first time the class is loaded into memory.
+    Also, static blocks are executed before constructors.  A class can have any number of static initialization blocks, and they can appear anywhere in the class body. The runtime system guarantees that static initialization blocks are called in the order that they appear in the source code. They only run once.
+    If you want to execute some code for every object, initialization blocks are more useful than static ones.
