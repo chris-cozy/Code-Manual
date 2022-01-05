@@ -1,0 +1,31 @@
+I/O WITH BASIC FILES
+
+    To open a text file in the current directory
+        - myfile = open('filename.txt')
+    To open a txt file in any location on your computer, still use open but provide the full file path
+        - myfile = open("C: \\Users\\UserName\\Folder\\test.txt")
+
+    .read() - reads through the file, displays \n wherever there is a new line. 
+        If you call it again it will return an empty string, because the 'cursor' is already at the end of the file. 
+        To reset the 'cursor', use .seek(0)
+    .readlines() - separates each line into separate lines(objects)
+
+    Don't forget to close files once you're through with them using .close()
+    You will get errors if you don't do this.
+    If you use a with/as statement you don't have to worry about closing the file and you can still grab its contents.
+        with open('myfile.txt') as my_new_file:
+        contents = my_new_file.read()
+
+    By using Shift+Tab right after open and before the file name you can access the File's information, such as the mode, which can be equal to:
+        'r' (read)
+        'w' (write or create new files)
+        'a' (append)
+        'r+' (read and write)
+        'w+" (write and read or create new files)
+
+        with open('newfile.txt', mode = 'a') as f:
+            f.write('Four on fourth')
+        or
+        newfile = open('test.txt','w')
+        newfile.write('Hello World')
+        newfile.close()

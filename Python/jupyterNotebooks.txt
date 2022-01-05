@@ -1,0 +1,10 @@
+BASICS
+    - In jupyter notebooks, run a cell by SHIFT+ENTER
+    - If you accidentally make a mistake and name a variable by a keyword, 
+    resulting in an error, you can use Kernel>Restart to reset all of the variables
+
+    In Jupyter notebooks only, you can directly write .txt files using:
+        - %%writefile filename.txt
+        - Contents of file etc etc
+
+    To see where the current jupyter notebook is in the directory, run pwd in a cell

@@ -1,0 +1,13 @@
+In the windows command prompt window:
+
+cd = current directory
+
+dir = contents of directory
+
+cd folder_name = navigate to specific folder
+
+cd .. = move back a directory
+
+cls = clear screen
+
+hit tab to autocomplete folder name

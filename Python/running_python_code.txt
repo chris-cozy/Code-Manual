@@ -1,0 +1,22 @@
+https://github.com/Pierian-Data/Complete-Python-3-Bootcamp
+
+Text Editors
+    - General editors for any text file
+    - Work with a variety of file types
+    - Can be customized with plugins and add-ons
+    - Most are not designed with only Python in mind
+    - Most popular: Sublime Text and ATOM
+
+Full IDEs
+    - Development Environments designed specifically for Python
+    - Larger programs
+    - Only community editions are free
+    - Lots of extra functionality
+    - Most popular: PyCharm and Spyder
+
+Notebook Environments
+    - Great for learning
+    - See input and output next to each other
+    - Support in-line markdown notes, visualizations, videos, and more
+    - Special file formats that are not .py
+    - Most popular: Jupyter Notebook

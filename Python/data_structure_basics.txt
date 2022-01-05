@@ -1,0 +1,115 @@
+DATA TYPES
+    - Integers (int)
+    - Floating point (float)
+    - Strings (str)
+    - Lists (list)
+    - Dictionaries (dict)
+    - Tuples (tup)
+    - Sets (set)
+    - Booleans (bool)
+
+DYNAMIC TYPING
+Python uses DYNAMIC TYPING instead of static, 
+meaning you can reassign variable names to values of different data types
+Pros:
+    - Easy to work with, Faster development time
+Cons:
+    - May result in bugs for unexpected data types, 
+    Need to be aware of type() to check the type of a variable
+For example:
+    my_dogs = 2
+    my_dogs = "Sammy"
+
+Variable names:
+    - Cannot start with a number
+    - No spaces, use _ instead
+    - Can't use special symbols
+
+\n newline
+\t tab (four spaces)
+len length
+
+STRINGS 
+    Strings use either syntax of single quotes or double-quotes. 
+    What's nice about having both is that you can have strings such as " I don't do that " utilizing apostrophes without error.
+    Strings are immutable and don't allow item assignment
+        - such as name = "Sam" then name[0] = 'P'
+
+    Strings are ordered sequences, which allows you to use indexing or slicing (indexing begins at 0). 
+    These methods use square brackets [ ] and an index number to indicate positions to be grabbed
+    Python also uses reverse indexing, which still begins at zero, then ends with the last character with index [-1]
+
+    Slicing [start:stop:step]
+        - step - size of the jumps you take from start to stop
+        - stop - go up to, but not including, that position
+        - sneaky and smooth python exclusive way to reverse a string, change the step size to -1, so [::-1]
+    
+    You can index a string without having it being assigned to a variable to placing a bracket set outside of it 
+    For example 
+        'Hello World'[8], returns 'r'
+
+    Once you create a string, you can type the variable name followed by a period, then press tab for a list of customization options
+    If you don't reassign the variable the changes won't be permanent
+        - .upper() changes all to uppercase
+        - .lower() changes all to lowercase
+        - .split() splits a string into a list based on the whitespaces, 
+        but by placing a specific char into the parenthesis, you can split on any character
+    
+    String interpolation - Sticking a variable into a string
+        .format() method
+            - Set of curly braces inside string wherever you are inputting an item, then call .format() after string with whatever you are inserting inside the parenthesis
+            - print('This is a string {}'.format('INSERTED')) will become: This is a string INSERTED
+            - Can index curly braces to get desired order
+            - Can also use variable names (keywords) to index quickly
+            - Float Formatting
+                - {value:width.precision f}
+        f-strings
+            - place an f in front of the string, then put the variable name inside the curly braces
+            - print(f'Hello, his name is {name}')
+
+LISTS 
+    Lists are ordered sequences that can hold a variety of object types
+    They use brackets and commas, support indexing and slicing, and can be nested
+    Lists are mutable, and support reassignments, unlike Strings
+    list. allows for customization options, such as appending and removing items of the list
+        .append() - adds an item to the end of the list
+        .pop() - removes an item from end of the list and returns removed item
+        .sort() - sorts list in alphabetical or numerical order, but it doesn't return anything, it changes the actual list
+        .reverse() - reverses the list but also doesn't return anything, changes actual list
+
+DICTIONARIES 
+    Dictionaries are unordered mappings for storing objects, they use a key-value pairing, 
+    which allows users to quickly grab objects without needing to know an index location
+    Uses curly braces and colons to signify keys and their associated values, and cannot be sorted
+
+    Dictionaries are very flexible in the Data types they can hold, 
+    can even hold lists and other dictionaries
+        - d = {'k1':123, 'k2':[0,1,2], 'k3':{'insideKey':100}}
+            - to get 100, make a double key call: d['k3']['insideKey']
+            - to get 2: d['k2'][2]
+        - d = {'key1':['a','b','c']}
+            - to capitalize 'c' : d['key1'][2].upper()
+
+    To add another pair to d = {'k1':100, 'k2': 200}
+        - all you need to do is d['k3'] = 300
+        - the same method works for overwriting values
+    
+    .keys() returns all keys
+    .values() returns all values
+    .items() returns all pairs of keys and values
+
+TUPLES
+    Tuples are like immutable lists and use parenthesis (1,2,3)
+    .count() returns how many times a certain object occurs in the tuple
+    .index() returns very first time object appears in the tuple
+
+SETS
+    Sets are an unordered collections of unique objects
+    myset = set()
+    myset.add() - adds the specified value to a set
+    You can cast a list to a set to only get the unique values
+
+BOOLEANS 
+    Make sure True and False have capitalized first letters are they will not be recognized as booleans by python
+    Can use the None keyword as a placeholder for an object we don't want to assign yet ( will count as defined)
+        - b = None
