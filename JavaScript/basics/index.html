@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <!-- Need a script element to host javascript code. This can 
+    be placed in either the head or the body. Best practice: Put it at the very end of the body section
+    This is because web files are parsed from top to bottom, so if your script is first
+    your page will be white/blank until the script is done being analyzed
+    There are exceptions to this rule-->
+    <script src= 'index.js'>
+        //We include the source js file to grab the code from
+        //While we could write js code here, for separation of concerns, we separate javascript code and html code into different files
+        //HTML is all about content, while Javascript is all about behavior
+        //In real world application, we may have hundreds of js files, bundled and served to th client
+    </script>
+</body>
+</html>

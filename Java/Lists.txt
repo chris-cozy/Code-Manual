@@ -1,0 +1,55 @@
+LIST BASICS
+    
+    Must use the import statements:
+        Import java.util.List;
+        Import java.util.ArrayList;
+
+    Lists are more flexible than Arrays, they are dynamic and are easily mutable
+    List is the interface, ArrayList is the class
+
+    Declaring a List
+        Lists are a generic collection, meaning they can hold any datatype, as long as it's not primitive
+        We have to tell the compiler what type we are storing, which we use <> for
+        Example:
+            Declaring and Initilizing a List of Strings
+                List<String> myStringList = new ArrayList<String>();
+            Declaring and Initilizing a List of Pencils
+                List<Pencil> myPencilList = new ArrayList<Pencil>();
+    
+LIST METHODS
+    Adding Items
+        add(<T>)
+        add(int pos, <T>)
+            - Indicing begins at 0
+
+    Removing Items
+        remove(int pos)
+        removeRange(int fromIndex, int toIndex)
+            - fromIndex - index of first element to be removed
+            - toIndex - index after last element to be removed
+    
+    Getters and Setters
+        Allows access to a specific index in the list, like an Array though not as time efficient
+        get(int pos)
+            - Returns the object in index pos
+        set(int pos, <T> x)
+            - Change the object in index pos to be x
+
+    Memory Management
+        size()
+            - Returns the num of elements in the List
+        isEmpty()
+            - Returns true if the list currently has no elements
+
+    Contains
+        contains(<T> x)
+            - Will return true if the List contains x
+            - Still has to search through list which will take time
+                - Calls the .equals(x) method on every position in the list
+                - If using a user-defined class, must override the equals method for this to work
+
+FOR LOOP SYNTAX
+    Can use the shorthand syntax to get to a position easier
+    for(<T> varName: ListName){
+        //refer to the variable with varName
+    }

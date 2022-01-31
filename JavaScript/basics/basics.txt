@@ -1,0 +1,8 @@
+We can use node to execute javascript code by using the terminal command
+    node *js file*
+in the same folder the file is in
+
+Node is a runtime env for executing js code, utilizing Google's v8 engine
+
+Can clear the js console by using th shortcut:
+    Ctrl + l
