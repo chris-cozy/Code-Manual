@@ -1,0 +1,14 @@
+{
+    "name":"Cozy",
+    "favorite_number": 3,
+    "is_programmer": true,
+    "hobbies": ["Art", "Exercise","Coding","Nature"],
+    "close_friends": [
+        {
+            "name":"Kurse",
+            "favorite_number": 4,
+            "is_programmer": false,
+            "hobbies": ["Valorant", "Exercise","Cozy","Nature"]
+        }
+    ]
+}

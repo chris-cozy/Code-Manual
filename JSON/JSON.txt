@@ -1,0 +1,31 @@
+Javascript Object Notation
+
+    It is a data representation format, like XLM or YAML
+    Commonly used for APIs and Config files
+    Extremely lightweight due to small file size
+    Easy to read and write
+    Easily integrateable with javascrip0t, since it is a subset of Javascript
+    Almost every programming language has built in functions to interpret JSON data
+
+SYNTAX
+Supports
+    Strings
+    Numbers
+    Booleans
+    null
+    Arrays
+    Objects - most complex but most used type in JSON
+
+USING JSON
+*file name*.json
+Take one of the supported types and put it in the file.
+Most of the time when working with JSON you will have an array or object as the top level of your file.
+Then inside that array or object may have other values, maybe nested arrays and objects.
+    example.json
+When writing key value pairs in an object:
+    {
+        "key":"value",
+        "key":"value"
+    }
+The strong point of JSON is the ability of nestign objects withing objects.
+This differentiates it from flat data storage methods.
