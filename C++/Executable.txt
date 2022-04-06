@@ -1,0 +1,11 @@
+To make a program executable on click:
+
+If using Linux with the gcc/g++ command line compile tool,
+compile the program with:
+    g++ your_program.cpp -o your_program
+
+you can add execute permissions to the file with the command:
+    sudo chmod a+x your_program
+
+If using windows, and developing under an IDE,
+    find the build executable under the project folder, and it should be able to execute by click
