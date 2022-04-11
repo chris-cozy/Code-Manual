@@ -1,0 +1,7 @@
+How to switch Git terminal accounts on windows.
+    -Access the windows credential manager
+    -Find the entry for Git and remove it.
+    -The next time you attempt to make a Git action you will be asked to login
+    -Now you can use the other account
+
+Basic Git
