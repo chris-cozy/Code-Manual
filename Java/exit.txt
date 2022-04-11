@@ -1,0 +1,14 @@
+There ae two common ways to terminate a program in Java.
+    System.exit()
+    return
+
+Both of these paths are different in their own ways.
+System.exit() is just another method to the compiler. 
+It doesn't read ahead and figure out that the whole program will quit at that point (the JVM quits). 
+Your OS or shell can read the integer that is passed back in the System.exit() method. 
+It is standard for 0 to mean "program quit and everything went OK" and any other value to notify an error occurred. 
+It is up to the developer to document these return values for any users.
+
+return on the other hand is a reserved key word that the compiler knows well. 
+return returns a value and ends the current function's run moving back up the stack to the function that invoked it (if any). 
+In your code above it returns void as you have not supplied anything to return.
