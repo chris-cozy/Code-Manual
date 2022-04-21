@@ -1,10 +1,10 @@
-# Code Snippets
+# Code Manual 📖
 <h2>Description</h2>
 <br>
 A collection of useful code snippets and scripts for later reference. 
 <br>
 
-A conglomeration of various language notes and general concepts for easy access. The **purpose** of this repository is to have a convenient access to language basics for all of the languages I have utilized. The ease-of-access allows for smoother development within those languages. 
+A conglomeration of various language notes and general concepts for easy access. The **purpose** of this repository is to have a convenient access to language basics for all of the languages I have utilized. The ease-of-access allows for smoother development within those languages. A manual of sorts for personal use when coding.
 
 <br>
 <h2>Table of Contents</h2>
