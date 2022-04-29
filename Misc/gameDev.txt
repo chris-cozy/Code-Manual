@@ -1,0 +1,34 @@
+--GENERAL--
+Have an object-oriented design
+
+
+--MAIN MENU--
+When making a main menu for your game, you have to consider game state.
+Keeping track of what state your game is in makes this process streamlined.
+    Main menu, In-game, Pause-menu, Game-over, etc.
+    Can use a finite state machine
+
+The main game loop uses _update and _draw functions.
+What you can do is create your own implementation of these functions for each state
+    update_menu     draw_menu
+    update_game     draw_game
+Set the main _update and _draw functions to the specific state functions when that state is in use
+
+--CODING YOUR OWN PHYSICS--
+Have variables for gravity and friction
+    Both <1
+Give each moving object variables for:
+    Position x,y
+    Velocity x,y (how much we add to the position per second)
+    Max Velocity
+    Acceleration
+    Boost (Jump)
+
+Add gravity to the y velocity
+Multiply friction to the x velocity
+
+To move the player horizontally, add or subtract acceleration to the x velocity 
+To move the player vertically, add boost to the y velocity
+
+Add the x and y velocities to the x and y position
+
