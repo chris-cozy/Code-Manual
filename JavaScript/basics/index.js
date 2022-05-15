@@ -87,7 +87,7 @@ greet();
 function personalGreet(name){
     console.log('Hello ' + name);
 }
-//ENter the argument when calling
+//En ter the argument when calling
 personalGreet('Kirsten');
 //If you don't pass in a value for a parameter, it will be undefined
 personalGreet();
