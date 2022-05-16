@@ -1,4 +1,5 @@
 #Basic if-statement syntax
+#Control flow syntax makes use of colons and indentations (whitespace)
 hungry = True
 if hungry:
     print('Feed Me!')
