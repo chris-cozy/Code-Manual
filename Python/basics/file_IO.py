@@ -1,5 +1,6 @@
 #Opening a text file in the current directory
 #Opening a text file anywhere on the computer
+#If the file doesn't already exist it will be created
 test_file1 = open('filename.txt')
 test_file2 = open("C: \\Users\\UserName\\Folder\\filename.txt")
 
@@ -7,7 +8,7 @@ test_file2 = open("C: \\Users\\UserName\\Folder\\filename.txt")
 #read - reads through the file, displays \n wherever there is a new line. Returns a string with file contents
     # If you call it again it will return an empty string, because the 'cursor' is already at the end of the file. 
     # To reset the 'cursor', use .seek(0)
-#readlines - makes each line into a separate object
+#readlines - makes each line into a separate object. Returns a list of the lines
 #seek - places the read curser of the desired line
 #write - write a line to a file
 #close - closes the file once done. very important
