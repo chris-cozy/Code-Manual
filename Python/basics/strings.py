@@ -24,3 +24,8 @@ name = 'Chris'
 print(f'Hello, my name is {name}')
 
 print('This is a {} string'.format('test'))
+
+#String concatenation is easy
+test3 = 'Hello'
+test4 = 'World'
+test5 = test3 + test4
