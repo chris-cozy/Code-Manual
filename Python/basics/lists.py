@@ -12,3 +12,5 @@ test_list.reverse()
 #append adds to end of list, pop removes from end of list and returns removed item
 test_list.append(6)
 test_list.pop()
+
+#lists can also be concatenated
