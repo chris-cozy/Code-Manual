@@ -18,6 +18,10 @@ test2.lower()
 #Built-in string function for splitting string into a list based on a character. Reassign if you want to use return
 ' '.split(test1)
 
+#Built in string function for joining strings together with a connector string
+#Useful for turning words into a sentence
+'--'.join(['a','b','c'])
+
 #Strings are immutable and don't allow item assignment
 #Two methods of inserting a variable into string: f-strings, and .format()
 name = 'Chris'
@@ -35,3 +39,4 @@ for letter in 'abcde':
 test3 = 'Hello'
 test4 = 'World'
 test5 = test3 + test4
+
