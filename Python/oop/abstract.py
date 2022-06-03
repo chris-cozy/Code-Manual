@@ -1,6 +1,7 @@
 #Abstract classes are those that aren't intended to be instantiated.
 #They are designed to only serve as a base class
-#They can have skeleton methods that can run an error if called from the abstract class
+#They can have skeleton methods that can run an error if called from the abstract class 
+# and not a subclass with an implementation
 #A derivation of polymorphism
 #Abstract class
 class Animal():
