@@ -13,3 +13,12 @@ from *module_filename* import *func_name*
 There is also a package folder in this repository. There is also a subpackage folder within that folder.
 To register these folders as directory, create this file within each:
 __init__.py
+
+Within each repo, mypackage and subpackage, there is a python script containing the functins we want to use in the program. As long as the repos contain the __init__.py file they can be treated as packages.
+
+To use a package, use the line:
+from *package_name* import *script_name*
+from *package_name*.*subpackage_name* import *script_name*
+
+To call functions from these scripts:
+*script_name*.*function_name*
