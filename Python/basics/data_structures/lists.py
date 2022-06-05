@@ -1,4 +1,5 @@
 #Lists are essentially arrays
+#With python lists, the last element can also be accessed with index -1
 test_list = [1,2,3,4,5]
 
 #Built-in list functions. These have no return, they change the actual list
