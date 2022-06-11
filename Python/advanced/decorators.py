@@ -1,4 +1,5 @@
 # Decorators allow you to add extra functionality to an existing function
+# Commonly used in web frameworks such as Jango or Flask
 #To break down decorators, here is an example of passing in a function as an argument.
 def hello():
     return 'Hello World!'
