@@ -10,9 +10,11 @@ test_list.reverse()
 
 #Lists support indexing, slicing, concatenation and reassingment
 #Built-in list functions.
-#append adds to end of list, pop removes from end of list and returns removed item
+#append adds to end of list, pop removes from end of list, or a specified index, and returns removed item
+#extend takes in a list, and appends it to the end of the current list
 test_list.append(6)
 test_list.pop()
+test_list.extend(new_list= [1,2,3])
 
 #List comprehensions are a unique way of creating a list in python.
 #Saves space but takes same amount of computational time
