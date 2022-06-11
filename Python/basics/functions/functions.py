@@ -11,7 +11,7 @@ def name_of_function(name):
 
 name_of_function("Jose")
 
-#With functions, generally use 'return' rather than 'print'
+#Generally use 'return' rather than 'print'
 #EXAMPLE
 def add(num1, num2):
     '''
@@ -52,3 +52,22 @@ def hello(name = 'Jose'):
     print(greet())
     print(welcome())
     print("This is the end of the hello func")
+
+
+#You can also return functions, which can be sert to varaibles and used later
+def hello(name = 'Jose'):
+    print("The hello function has been executed")
+
+    def greet():
+        return '\t This is the greet function inside hello'
+    def welcome():
+        return '\t This is welcome inside hello'
+    
+    print("Returning a function")
+    if name == 'Jose':
+        return greet
+    else:
+        return welcome
+
+func = hello()
+func()
