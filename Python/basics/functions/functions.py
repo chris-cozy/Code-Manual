@@ -12,7 +12,7 @@ def name_of_function(name):
 name_of_function("Jose")
 
 #With functions, generally use 'return' rather than 'print'
-#Example
+#EXAMPLE
 def add(num1, num2):
     '''
     Adds two numbers and returns the value
@@ -21,7 +21,7 @@ def add(num1, num2):
 
 result  = add(3,7)
 
-#Example
+#EXAMPLE
 def even_list(num_list):
     '''
     Returns true if any number inside a list is even
@@ -39,3 +39,16 @@ def even_list(num_list):
 # include a default if no parameters are stated when there should be one
 def say_hello(name = "Default"):
     print(name)
+
+#You can define functions within functions, limiting their scope
+def hello(name = 'Jose'):
+    print("The hello function has been executed")
+
+    def greet():
+        return '\t This is the greet function inside hello'
+    def welcome():
+        return '\t This is welcome inside hello'
+    
+    print(greet())
+    print(welcome())
+    print("This is the end of the hello func")
