@@ -2,6 +2,8 @@
 # They allow you to generate a sequence of values over time, more memory efficient
 # Instead of having to compute an entire series of values at once and holding them in memory, 
 # the generator computes one value and waits until the next one is called for
+# If the output of a function has the potential of taking up a large amount of memory and you only intend to iterator through it,
+# use a generator
 # The main syntax is the yield keyword
 # The range() function utilizes a generator
 def cubes(n):
