@@ -17,6 +17,12 @@ soup = bs4.BeautifulSoup(result.text,"lxml")
 # the original HTLM indexing
 print(soup)
 
-# select() - this is how you access the HTML elements
+# select() - this is how you access the HTML elements (through tags)
+    # Returns a list of the element matches
 soup.select('title')
+
+# Returning the text in the element
+# getText returns the text as a string
+title = soup.select('title')[0].getText()
+print(title)
 
