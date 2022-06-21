@@ -15,6 +15,13 @@ To web scrape in Python we can use a few external libraries, including Beautiful
 - lxml
     - Allows you to decipher what requests returns
 - bs4
+### Basic Script Structure
+The basic structure of the webscraping script will be:
+- import requests
+- requests.get
+- create soup object
+- soup.select()
+The key part, that will be unique, is deciphering what you should pass in to select() to get the data that you want. Figuring out the different string codes to pass in is where the majority of the work will be.
 ## Rules of Web Scraping
 You should always attempt to get permission before scraping a site. Sometimes, if you make too many scraping requests/attempts your IP Address could get blocked from that site (A VPN would come in useful here). Some sites automatically block scraping software. Generally sites with high traffic (e.g Wikipedia, reddit, news outlets) are okay to scrape freely. You should also check the laws of your country to make sure web scraping is legal.
 ## Limitations of Web Scraping
