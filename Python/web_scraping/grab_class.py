@@ -7,6 +7,7 @@ url = "https://en.wikipedia.org/wiki/Mental_health"
 result = requests.get(url)
 soup = bs4.BeautifulSoup(result.text,"lxml")
 
+#Class descriptor
 choice = ".toctext"
 
 # Display the table of contents
