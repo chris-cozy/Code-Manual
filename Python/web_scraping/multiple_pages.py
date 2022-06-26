@@ -7,6 +7,7 @@ import bs4
 import requests
 
 # We can alter the url accordingly to access separate pages.
+# In this example, each page is associated with a page number
 url = "https://books.toscrape.com/catalogue/page-{}.html"
 
 for num in range(1,50):
