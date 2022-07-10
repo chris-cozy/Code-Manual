@@ -10,7 +10,10 @@ To send emails in Python, there are a few steps required.
 - Sending the message
 ### Neccesary Library
 There is a built-in library for this: *smtplib*
-Each major email provider has their own SMTP (Simple Mail Transfer Protocol) Server.
+- This is used for sending emails. Each major email provider has their own SMTP (Simple Mail Transfer Protocol) Server.
+For checking inbox, he built-in library: *imaplib*
+- This has special syntax for searching through the inbox. This syntax can be found online.
+For checking inbox, he built-in library: *email*
 ### Tutorial/Example
 I will be using the Gmail SMTP in this example.
 For gmail users, you will need to generate an app password instead of the normal password. This let's gmail know that the python script attempting to access the account is authorized to do so.
